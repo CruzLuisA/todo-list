@@ -1,13 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { MantineProvider } from '@mantine/core';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <MantineProvider
+      withGlobalStyles
+      withNormalizeCSS
+      theme={{
+        colorScheme: 'dark',
+        primaryColor: 'red',
+        primaryShade: 6,
+        cursorType: 'pointer',
+        fontSizes:{
+          xs: 16,
+          sm: 18,
+          md: 20,
+          lg: 22,
+          xl: 24,
+        }
+      }}
+      >
+      <App />
+    </MantineProvider>
   </React.StrictMode>
 );
 
